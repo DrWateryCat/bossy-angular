@@ -1,0 +1,104 @@
+<!--
+<div class="modal-header">
+  <mat-tab-group (selectedTabChange)="onTabChange($event)">
+    <mat-tab label="Sign in">
+      <form [formGroup]="loginForm">
+        <mat-form-field>
+          <input matInput name="emailInput" type="email" formControlName="emailInput" placeholder="Email" autocomplete="username" required
+          />
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <input matInput name="passwordInput" type="password" formControlName="passwordInput" placeholder="Password" autocomplete="current-password"
+            required />
+        </mat-form-field>
+        <button mat-raised-button (click)="emailSubmit()">Sign in</button>
+      </form>
+      <mat-divider></mat-divider>
+      <button mat-raised-button (click)="googleLogin()">Sign in with Google</button>
+      <mat-divider [vertical]="true"></mat-divider>
+      <button mat-raised-button (click)="phoneLogin()">Sign in with Phone</button>
+    </mat-tab>
+    <mat-tab label="Sign up">
+      <form [formGroup]="signupForm">
+        <mat-form-field>
+          <input matInput name="emailInput" type="email" formControlName="emailInput" placeholder="Email" required/>
+          <mat-error *ngIf="signupEmail.invalid && (signupEmail.dirty || signupEmail.touched)">{{ signupEmailErrorMessage }}</mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <input matInput name="passwordInput" type="password" formControlName="passwordInput" placeholder="Password" required />
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <input matInput name="passwordConfirm" type="password" formControlName="passwordConfirm" placeholder="Confirm Password" required
+          />
+        </mat-form-field>
+        <button mat-raised-button (click)="emailSignup()">Sign up</button>
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div mat-dialog-actions>
+
+</div>
+-->
+<div class="modal-header">
+  <h4 class="modal-title">{{currentStateStr}}</h4>
+</div>
+<div class="modal-body">
+  <ngb-tabset>
+    <ngb-tab title="Log In">
+      <ng-template ngbTabContent>
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <label for="emailInput">Email Address</label>
+            <input type="email" class="form-control" id="emailInput" name="emailInput" formControlName="emailInput" autocomplete="email"
+              aria-describedby="emailHelp" placeholder="Enter Email" required />
+            <small id="emailHelp" class="form-text text-muted">Don't worry, we won't share your email.</small>
+          </div>
+          <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input type="password" class="form-control" formControlName="passwordInput" name="passwordInput" id="passwordInput" autocomplete="current-password"
+              required/>
+          </div>
+          <button type="submit" class="btn btn-primary" (click)="emailSubmit()">Login</button>
+        </form>
+        <div class="align-middle">
+          <div class="btn-group" role="group" aria-label="Login Options">
+            <button type="button" (click)="googleLogin()">
+              <i class="fa fa-google" aria-hidden="true"></i>Google</button>
+            <button type="button" (click)="phoneLogin()">
+              <i class="fa fa-phone" aria-disabled="true"></i>Phone</button>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Sign Up">
+      <ng-template ngbTabContent>
+        <form [formGroup]="signupForm">
+          <div class="form-group">
+            <label for="emailInput">Email Address</label>
+            <input type="email" [ngClass]="loginEmailClasses" id="emailInput" name="emailInput" formControlName="emailInput" autocomplete="email"
+              aria-describedby="emailHelp" placeholder="Enter Email" required />
+            <small id="emailHelp" class="form-text text-muted">Don't worry, we won't share your email.</small>
+            <div class="invalid-feedback" *ngIf="signupForm.invalid">
+              {{signupEmailErrorMessage}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input type="password" class="form-control" formControlName="passwordInput" name="passwordInput" id="passwordInput" placeholder="Password"
+              required/>
+          </div>
+          <div class="form-group">
+            <label for="passwordConfirm">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="passwordConfirm" name="passwordConfirm" id="passwordConfirm"
+              placeholder="Confirm Password" required/>
+          </div>
+          <button class="btn btn-primary" (click)="emailSignup()">Sign Up</button>
+        </form>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.bg-pink {
+    background-color: #ec407a!important;
+}
+
+.bg-orange {
+    background-color: #FFAF00!important;
+}
+
+.md-primary {
+    background-color: #ffa726!important;
+}
+
+.md-primary-light {
+    background-color: #ffd95b;
+}
+
+.md-primary-dark {
+    background-color: #c77800;
+}
+
+.md-secondary {
+    background-color: #ff7043!important;
+}
+
+.md-secondary-light {
+    background-color: #ffa270;
+}
+
+.md-secondary-dark {
+    background-color: #c63f17;
+}

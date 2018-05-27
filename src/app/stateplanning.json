@@ -1,0 +1,12 @@
+{
+    "isLoggedIn": false,
+    "user": {},
+    "categories": [
+        {
+            "name": "Unsorted",
+            "owner": {},
+            "allowedUsers": [],
+            "items": []
+        }
+    ]
+}
