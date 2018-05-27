@@ -1,6 +1,9 @@
-<div class="card" style="margin-top: 3rem;">
-  <div class="card-body">
+<div class="card" style="margin-top: 4rem;">
+  <div class="card-header">
+    {{category}}
     <ng-content></ng-content>
+  </div>
+  <div class="card-body">
     <div class="container">
       <div class="row no-gutters">
         <div class="col" *ngFor="let todo of todos">

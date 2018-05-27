@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div *ngIf="auth.authState | async">
-  <app-todo-list [todos]="todos$ | async">
-    <button class="btn btn-outline-primary float-sm-right" style="margin-bottom: 1rem;" (click)="showAddTodo()">Add a Todo</button>
+  <app-todo-list [todos]="todos$ | async" [category]="'Unsorted'">
+    <button class="btn btn-sm btn-outline-primary float-sm-right" style="margin-bottom: 1rem;" (click)="showAddTodo()">Add a Todo</button>
   </app-todo-list>
 </div>

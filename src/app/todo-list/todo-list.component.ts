@@ -7,6 +7,7 @@ import { TodoItem } from '../models/TodoItem';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
+  @Input() category: string;
   @Input() todos: Array<TodoItem>;
   constructor() {
   }

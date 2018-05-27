@@ -1,11 +1,15 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-header">
-    {{todo.title}}
-    <button type="button" class="close" aria-label="Close" (click)="delete()">
-      <i class="fa fa-times" aria-disabled="true"></i>
-    </button>
-  </div>
+<div class="card" style="width: 18rem; margin-top: 1rem;">
   <div class="card-body">
+    <div class="row">
+      <div class="col-8">
+        <h5 class="card-title">{{todo.title}}</h5>
+      </div>
+      <div class="col-4">
+        <button type="button" class="close" aria-label="Close" (click)="delete()">
+          <i class="fa fa-times" aria-disabled="true"></i>
+        </button>
+      </div>
+    </div>
     <h6 class="card-subtitle">Due on {{todo.due.toLocaleDateString('en-us')}} at {{todo.due.toLocaleTimeString('en-us')}}</h6>
     <p class="card-text">
       {{todo.desc}}
@@ -15,7 +19,7 @@
     <div class="row">
       <div class="col">
         <label for="completedControl">Completed</label>
-        <input type="checkbox" (click)="finishedChange()" [checked]="todo.completed"/>
+        <input type="checkbox" (click)="finishedChange()" [checked]="todo.completed" />
       </div>
       <div>
         <button type="button" class="btn btn-outline-primary align-content-end" (click)="edit()">
